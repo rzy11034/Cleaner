@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Release"/>
+    <Units Count="2">
+      <Unit0>
+        <Filename Value="Clean.ppr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="16"/>
+        <CursorPos X="54" Y="19"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="Source\Clean.Main.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="124"/>
+        <CursorPos X="42" Y="23"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit1>
+    </Units>
+    <JumpHistory Count="8" HistoryIndex="7">
+      <Position1>
+        <Filename Value="Source\Clean.Main.pas"/>
+        <Caret Line="187" Column="5"/>
+      </Position1>
+      <Position2>
+        <Filename Value="Source\Clean.Main.pas"/>
+        <Caret Line="11" Column="11"/>
+      </Position2>
+      <Position3>
+        <Filename Value="Source\Clean.Main.pas"/>
+        <Caret Line="15" Column="14"/>
+      </Position3>
+      <Position4>
+        <Filename Value="Source\Clean.Main.pas"/>
+        <Caret Line="16" Column="15"/>
+      </Position4>
+      <Position5>
+        <Filename Value="Source\Clean.Main.pas"/>
+        <Caret Line="17" Column="24"/>
+      </Position5>
+      <Position6>
+        <Filename Value="Source\Clean.Main.pas"/>
+        <Caret Line="18" Column="23"/>
+      </Position6>
+      <Position7>
+        <Filename Value="Source\Clean.Main.pas"/>
+        <Caret Line="19" Column="23"/>
+      </Position7>
+      <Position8>
+        <Filename Value="Source\Clean.Main.pas"/>
+        <Caret Line="20" Column="21"/>
+      </Position8>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
