@@ -8,18 +8,17 @@
       <Unit0>
         <Filename Value="Clean.ppr"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="16"/>
-        <CursorPos X="54" Y="19"/>
+        <CursorPos X="7" Y="42"/>
         <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="Source\Clean.Main.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="124"/>
-        <CursorPos X="42" Y="23"/>
+        <TopLine Value="162"/>
+        <CursorPos X="5" Y="188"/>
         <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit1>
