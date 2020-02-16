@@ -48,6 +48,11 @@
               <UseExternalDbgSyms Value="True"/>
             </Debugging>
           </Linking>
+          <Other>
+            <CompilerMessages>
+              <IgnoredMessages idx4105="True" idx4104="True"/>
+            </CompilerMessages>
+          </Other>
         </CompilerOptions>
       </Item2>
       <Item3 Name="Release">
@@ -64,6 +69,7 @@
             <Optimizations>
               <OptimizationLevel Value="3"/>
             </Optimizations>
+            <SmallerCode Value="True"/>
           </CodeGeneration>
           <Linking>
             <Debugging>
@@ -71,6 +77,11 @@
             </Debugging>
             <LinkSmart Value="True"/>
           </Linking>
+          <Other>
+            <CompilerMessages>
+              <IgnoredMessages idx4105="True" idx4104="True"/>
+            </CompilerMessages>
+          </Other>
         </CompilerOptions>
       </Item3>
     </BuildModes>
@@ -79,9 +90,8 @@
     </PublishOptions>
     <RunParams>
       <FormatVersion Value="2"/>
-      <Modes Count="0"/>
     </RunParams>
-    <Units Count="2">
+    <Units Count="4">
       <Unit0>
         <Filename Value="Clean.ppr"/>
         <IsPartOfProject Value="True"/>
@@ -90,6 +100,14 @@
         <Filename Value="Source\Clean.Main.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="Source\Clean.KMPAlgorithm.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="Source\Clean.Utils.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit3>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

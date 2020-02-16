@@ -5,14 +5,13 @@
 uses {$IFDEF UNIX} {$IFDEF UseCThreads}
   cthreads, {$ENDIF} {$ENDIF}
   SysUtils,
-  Clean.Main;
-
-const
-  EndOfProgram_en: string = 'Press any key to continue...';
+  Clean.Utils,
+  Clean.Main,
+  Clean.KMPAlgorithm;
 
 var
   Cln: TClean;
-  yes: string;
+  yes: UString;
 
 begin
   Cln := TClean.Create;
@@ -27,10 +26,11 @@ begin
 
       if (yes = 'Y') or (yes = 'y') then
       begin
-        Cln.StartClean;
+        Cln.ExecuteClean;
       end;
 
-      Writeln(EndOfProgram_en);
+      DrawLineProgramEnd;
+      Writeln(END_OF_PROGRAM_EN);
       Readln;
     except
       on E: Exception do
@@ -39,4 +39,5 @@ begin
   finally
     FreeAndNil(Cln);
   end;
+
 end.
