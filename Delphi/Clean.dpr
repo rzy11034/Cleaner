@@ -8,8 +8,7 @@
 uses
   System.SysUtils,
   Clean.Main in 'Source\Clean.Main.pas',
-  Clean.Utils in 'Source\Clean.Utils.pas',
-  Clean.KMPAlgorithm in 'Source\Clean.KMPAlgorithm.pas';
+  Clean.Utils in 'Source\Clean.Utils.pas';
 
 var
   Cln: TClean;

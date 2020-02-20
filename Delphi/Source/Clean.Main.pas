@@ -4,8 +4,7 @@ interface
 
 uses
   System.SysUtils,
-  Clean.Utils,
-  Clean.KMPAlgorithm;
+  Clean.Utils;
 
 type
   TClean = class
@@ -15,13 +14,15 @@ type
 
     /// <summary> 对目录下的所有文件进行扫描并加入 __fileList </summary>
     /// <param name="dir">当前目录 </param>
-    procedure __addFlie(dir: UString);
+    procedure __addAllFlie(dir: UString);
     /// <summary> 将 str 字符串加入到数组末尾 </summary>
     procedure __append(var arr: TArr_str; str: UString);
     /// <summary> 对当前目录下所有目录递归扫描，  /// </summary>
-    procedure __search(dir: UString);
-    // 冒泡排序
+    procedure __scanning(dir: UString);
+    /// <summary> 快速排序 </summary>
     procedure __sort(var arr: TArr_str);
+    /// <summary> 后缀名匹配 </summary>
+    function __suffixMatch(str: UString): boolean;
   public
     constructor Create;
     destructor Destroy; override;
@@ -39,7 +40,7 @@ const
 
 implementation
 
-procedure TClean.__addFlie(dir: UString);
+procedure TClean.__addAllFlie(dir: UString);
 var
   errFile: integer;
   tempFile: UString;
@@ -67,12 +68,12 @@ var
 begin
   i := Length(arr);
   SetLength(arr, i + 1);
-  arr[High(arr)] := str;
+  arr[high(arr)] := str;
 end;
 
 constructor TClean.Create;
 begin
-  __search(GetCurrentDir);
+  __scanning(GetCurrentDir);
 end;
 
 procedure TClean.ExecuteClean;
@@ -82,7 +83,7 @@ var
   tempFlie: UString;
   IsSuccess: boolean;
 begin
-  for i := low(__fileList) to High(__fileList) do
+  for i := low(__fileList) to high(__fileList) do
   begin
     tempFlie := __fileList[i];
     IsSuccess := DeleteFile(tempFlie);
@@ -93,7 +94,7 @@ begin
       Writeln('Delete ', tempFlie, '  -- Failed.');
   end;
 
-  for i := High(__dirList) downto low(__dirList) do
+  for i := high(__dirList) downto low(__dirList) do
   begin
     tempDir := __dirList[i];
     IsSuccess := RemoveDir(tempDir);
@@ -128,21 +129,21 @@ begin
   end;
 end;
 
-procedure TClean.__search(dir: UString);
+procedure TClean.__scanning(dir: UString);
 var
   searchRec: TSearchRec;
-  errDir, i: integer;
+  errDir: integer;
   tempDir: UString;
 begin
   errDir := FindFirst(dir + PathDelim + '*.*', faAnyFile, searchRec);
 
   while errDir = 0 do
   begin
+    tempDir := dir + PathDelim + searchRec.Name;
+
     if (searchRec.Name <> '.') and (searchRec.Name <> '..') and
       ((searchRec.Attr and faDirectory) = faDirectory) then
     begin
-      tempDir := dir + PathDelim + searchRec.Name;
-
       // 将符合条件的目录加入 __dirList 中
       if (LowerCase(searchRec.Name) = '__history') or
         (LowerCase(searchRec.Name) = '__recovery') or
@@ -155,19 +156,18 @@ begin
         (LowerCase(searchRec.Name) = 'x86_64-win64') or
         (LowerCase(searchRec.Name) = 'backup') then
       begin
-        __addFlie(tempDir);
+        __addAllFlie(tempDir);
         __append(__dirList, tempDir);
-      end
-      else
-      begin
-        for i := 0 to High(TARR_FILE_EXTENSION) do
-        begin
-          if KmpSearch(LowerCase(searchRec.Name), TARR_FILE_EXTENSION[i]) <> -1 then
-            __append(__fileList, tempDir);
-        end;
       end;
 
-      __search(tempDir);
+      __scanning(tempDir);
+    end
+    else // 对特殊文件进行扫描并加列表
+    begin
+      if __suffixMatch(LowerCase(searchRec.Name)) then
+      begin
+        __append(__fileList, tempDir);
+      end;
     end;
 
     errDir := FindNext(searchRec);
@@ -177,33 +177,95 @@ begin
 end;
 
 procedure TClean.__sort(var arr: TArr_str);
-var
-  i, pass: integer;
-  temp, s1, s2: UString;
-  sorted: boolean;
-begin
-  sorted := False;
-  pass := 1;
-
-  while not sorted do
+  procedure __swap(var a, b: UString);
+  var
+    tmp: UString;
   begin
-    sorted := True;
-    Inc(pass);
-
-    for i := 0 to Length(arr) - pass do
-    begin
-      s1 := arr[i];
-      s2 := arr[i + 1];
-
-      if (s1 > s2) then
-      begin
-        temp := arr[i + 1];
-        arr[i + 1] := arr[i];
-        arr[i] := temp;
-        sorted := False;
-      end;
-    end;
+    tmp := a;
+    a := b;
+    b := tmp;
   end;
+
+  function __partition(var arr: TArr_str; l, r: integer): integer;
+  var
+    leftPoint, rightPoint: integer;
+    e: UString;
+  begin
+    __swap(arr[l], arr[l + (r - l) div 2]);
+    e := arr[l];
+
+    leftPoint := l + 1;
+    rightPoint := r;
+    while True do
+    begin
+      while (leftPoint <= r) and (arr[leftPoint] < e) do
+        Inc(leftPoint);
+      while (rightPoint >= l) and (arr[rightPoint] > e) do
+        Dec(rightPoint);
+
+      if leftPoint > rightPoint then
+        Break;
+
+      __swap(arr[leftPoint], arr[rightPoint]);
+      Inc(leftPoint);
+      Dec(rightPoint);
+    end;
+
+    __swap(arr[l], arr[rightPoint]);
+    Result := rightPoint;
+  end;
+
+  procedure __sort(var arr: TArr_str; l, r: integer);
+  var
+    p: integer;
+  begin
+    if l >= r then
+      Exit;
+
+    p := __partition(arr, l, r);
+    __sort(arr, l, p);
+    __sort(arr, p + 1, r);
+  end;
+
+begin
+  __sort(arr, 0, high(arr));
+end;
+
+function TClean.__suffixMatch(str: UString): boolean;
+var
+  suffixName: TArr_str;
+  s: UString;
+  i, j: integer;
+  flag: boolean;
+begin
+  suffixName := [
+    '.~dsk',
+    '.dsk',
+    '.local',
+    '.identcache',
+    '.projdata',
+    '.tvsconfig'];
+
+  for s in suffixName do
+  begin
+    i := high(s);
+    j := high(str);
+    flag := False;
+
+    if (Length(s) < Length(str)) and (s[i] = str[j]) then
+    begin
+      flag := True;
+      Dec(i);
+      Dec(j);
+    end
+    else
+      flag := False;
+
+    if flag = True then
+      Break;
+  end;
+
+  Result := flag;
 end;
 
 end.

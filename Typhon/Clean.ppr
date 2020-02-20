@@ -2,12 +2,10 @@
 
 {$mode objfpc}{$H+}
 
-uses {$IFDEF UNIX} {$IFDEF UseCThreads}
-  cthreads, {$ENDIF} {$ENDIF}
+uses
   SysUtils,
   Clean.Utils,
-  Clean.Main,
-  Clean.KMPAlgorithm;
+  Clean.Main;
 
 var
   Cln: TClean;
