@@ -2,7 +2,8 @@
 
 {$mode objfpc}{$H+}
 
-uses
+uses {$IFDEF UNIX} {$IFDEF UseCThreads}
+  cthreads, {$ENDIF} {$ENDIF}
   SysUtils,
   Clean.Utils,
   Clean.Main;
