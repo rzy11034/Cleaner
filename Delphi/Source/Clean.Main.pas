@@ -22,7 +22,7 @@ type
     /// <summary> 快速排序 </summary>
     procedure __sort(var arr: TArr_str);
     /// <summary> 后缀名匹配 </summary>
-    function __suffixMatch(str: UString): boolean;
+    function __suffixMatch(source: UString): boolean;
   public
     constructor Create;
     destructor Destroy; override;
@@ -231,12 +231,13 @@ begin
   __sort(arr, 0, high(arr));
 end;
 
-function TClean.__suffixMatch(str: UString): boolean;
+function TClean.__suffixMatch(source: UString): boolean;
 var
   suffixName: TArr_str;
-  s: UString;
+  s, tmp: UString;
   i, j: integer;
   flag: boolean;
+  k: integer;
 begin
   suffixName := [
     '.~dsk',
@@ -249,23 +250,24 @@ begin
   for s in suffixName do
   begin
     i := high(s);
-    j := high(str);
-    flag := False;
+    j := high(source);
+    tmp := '';
 
-    if (Length(s) < Length(str)) and (s[i] = str[j]) then
+    while (Length(s) < Length(source)) and (i >= low(s)) do
     begin
-      flag := True;
+      Insert(source[j], tmp, low(tmp));
       Dec(i);
       Dec(j);
-    end
-    else
-      flag := False;
+    end;
 
-    if flag = True then
-      Break;
+    if tmp = s then
+    begin
+      Result := True;
+      Exit;
+    end;
   end;
 
-  Result := flag;
+  Result := False;
 end;
 
 end.

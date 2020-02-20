@@ -24,7 +24,7 @@ type
     /// <summary> 快速排序 </summary>
     procedure __sort(var arr: Tarr_str); overload;
     /// <summary> 后缀名匹配 </summary>
-    function __suffixMatch(str: UString): boolean;
+    function __suffixMatch(Source: UString): boolean;
   public
     constructor Create;
     destructor Destroy; override;
@@ -78,7 +78,7 @@ var
   tempFlie: UString;
   IsSuccess: boolean;
 begin
-  for i := low(__fileList) to High(__fileList) do
+  for i := Low(__fileList) to High(__fileList) do
   begin
     tempFlie := __fileList[i];
     IsSuccess := DeleteFile(tempFlie);
@@ -89,7 +89,7 @@ begin
       Writeln('Delete ', tempFlie, '  -- Failed.');
   end;
 
-  for i := High(__dirList) downto low(__dirList) do
+  for i := High(__dirList) downto Low(__dirList) do
   begin
     tempDir := __dirList[i];
     IsSuccess := RemoveDir(tempDir);
@@ -226,12 +226,11 @@ begin
   __sort__(arr, 0, High(arr));
 end;
 
-function TClean.__suffixMatch(str: UString): boolean;
+function TClean.__suffixMatch(Source: UString): boolean;
 var
   suffixName: TArr_str;
-  s: UString;
+  s, tmp: UString;
   i, j: integer;
-  flag: boolean;
 begin
   suffixName := [
     '.~dsk',
@@ -244,23 +243,24 @@ begin
   for s in suffixName do
   begin
     i := High(s);
-    j := High(str);
-    flag := False;
+    j := High(Source);
+    tmp := '';
 
-    if (Length(s) < Length(str)) and (s[i] = str[j]) then
+    while (Length(s) < Length(Source)) and (i >= Low(s)) do
     begin
-      flag := True;
+      Insert(Source[j], tmp, Low(tmp));
       Dec(i);
       Dec(j);
-    end
-    else
-      flag := False;
+    end;
 
-    if flag = True then
-      Break;
+    if tmp = s then
+    begin
+      Result := True;
+      Exit;
+    end;
   end;
 
-  Result := flag;
+  Result := False;
 end;
 
 end.
