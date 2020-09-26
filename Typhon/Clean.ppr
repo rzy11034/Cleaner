@@ -2,8 +2,12 @@
 
 {$mode objfpc}{$H+}
 
-uses {$IFDEF UNIX} {$IFDEF UseCThreads}
-  cthreads, {$ENDIF} {$ENDIF}
+uses
+ {$IFDEF UNIX}
+ {$IFDEF UseCThreads}
+  cthreads,
+ {$ENDIF}
+ {$ENDIF}
   SysUtils,
   Clean.Utils,
   Clean.Main;
@@ -38,5 +42,4 @@ begin
   finally
     FreeAndNil(Cln);
   end;
-
 end.

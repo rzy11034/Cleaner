@@ -6,8 +6,8 @@ type
   UChar = char;
   UString = string;
 
-  TArr_str = TArray<UString>;
-  TArr_int = TArray<integer>;
+  TArray_str = TArray<UString>;
+  TArray_int = TArray<integer>;
 
 procedure DrawLineProgramEnd;
 

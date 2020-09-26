@@ -8,8 +8,8 @@
       <Unit0>
         <Filename Value="Clean.ppr"/>
         <IsPartOfProject Value="True"/>
-        <TopLine Value="4"/>
-        <CursorPos X="31" Y="6"/>
+        <TopLine Value="8"/>
+        <CursorPos X="13" Y="8"/>
         <UsageCount Value="50"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -18,8 +18,7 @@
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="130"/>
-        <CursorPos X="25" Y="28"/>
+        <CursorPos X="6" Y="289"/>
         <UsageCount Value="50"/>
         <Loaded Value="True"/>
       </Unit1>
