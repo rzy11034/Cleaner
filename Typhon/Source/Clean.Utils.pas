@@ -31,6 +31,7 @@ begin
     Write('=');
   end;
   Writeln;
+
 end;
 
 end.
