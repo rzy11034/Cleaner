@@ -12,8 +12,8 @@ type
   UChar = UnicodeChar;
   UString = UnicodeString;
 
-  TArr_int = array of integer;
-  TArr_str = array of UString;
+  TArray_int = array of integer;
+  TArray_str = array of UString;
 
 procedure DrawLineProgramEnd;
 
