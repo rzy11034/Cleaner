@@ -145,7 +145,9 @@ begin
     'i386-win32',
     'x86_64-win64',
     'x86_64-linux',
-    'backup'];
+    'backup',
+    'bin',
+    'gtk2'];
 
   for i := 0 to High(dirName) do
   begin
