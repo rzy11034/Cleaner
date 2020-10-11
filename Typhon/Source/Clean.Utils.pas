@@ -17,9 +17,6 @@ type
 
 procedure DrawLine;
 
-resourcestring
-  END_OF_PROGRAM_EN = 'Press any key to continue...';
-
 implementation
 
 procedure DrawLine;
@@ -31,7 +28,6 @@ begin
     Write('=');
   end;
   Writeln;
-
 end;
 
 end.

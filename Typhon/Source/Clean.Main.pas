@@ -1,4 +1,4 @@
-﻿unit Clean.Main;
+unit Clean.Main;
 
 {$mode objfpc}{$H+}
 
