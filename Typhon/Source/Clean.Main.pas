@@ -129,7 +129,6 @@ begin
 
   if isSuccess then
   begin
-    //Writeln(UString('所有文档清理完毕...'));
     Writeln(string('所有文档清理完毕...'));
   end
   else
@@ -147,6 +146,10 @@ begin
 
       __scanning(GetCurrentDir);
       Print;
+
+      {$IFDEF MSWINDOWS}
+      ReadLn;
+      {$ENDIF}
     end;
   end;
 end;
