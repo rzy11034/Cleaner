@@ -10,7 +10,7 @@
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
         <TopLine Value="11"/>
-        <CursorPos Y="17"/>
+        <CursorPos X="3" Y="17"/>
         <UsageCount Value="52"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -18,7 +18,7 @@
         <Filename Value="Source\Clean.Main.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="255"/>
+        <TopLine Value="60"/>
         <CursorPos X="19" Y="275"/>
         <UsageCount Value="52"/>
         <Loaded Value="True"/>
