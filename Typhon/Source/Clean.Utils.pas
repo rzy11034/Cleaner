@@ -15,14 +15,14 @@ type
   TArray_int = array of integer;
   TArray_str = array of UString;
 
-procedure DrawLineProgramEnd;
+procedure DrawLine;
 
 resourcestring
   END_OF_PROGRAM_EN = 'Press any key to continue...';
 
 implementation
 
-procedure DrawLineProgramEnd;
+procedure DrawLine;
 var
   i: integer;
 begin

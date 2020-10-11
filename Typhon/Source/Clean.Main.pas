@@ -31,9 +31,11 @@ type
   public
     constructor Create;
     destructor Destroy; override;
-    procedure ExecuteClean;
+    function ExecuteClean: boolean;
     /// <summary> 打印待删除列表 </summary>
     procedure Print;
+
+    procedure Run;
   end;
 
 implementation
@@ -50,34 +52,44 @@ begin
   inherited Destroy;
 end;
 
-procedure TClean.ExecuteClean;
+function TClean.ExecuteClean: boolean;
 var
   i: integer;
   tempDir: UString;
   tempFlie: UString;
-  IsSuccess: boolean;
+  isSuccess, ret: boolean;
 begin
+  ret := true;
+
   for i := Low(_fileList) to High(_fileList) do
   begin
     tempFlie := _fileList[i];
-    IsSuccess := DeleteFile(tempFlie);
+    isSuccess := DeleteFile(tempFlie);
 
-    if IsSuccess then
+    if isSuccess then
       Writeln('Delete ', tempFlie, '  -- OK.')
     else
+    begin
       Writeln('Delete ', tempFlie, '  -- Failed.');
+      ret := isSuccess;
+    end;
   end;
 
   for i := High(_dirList) downto Low(_dirList) do
   begin
     tempDir := _dirList[i];
-    IsSuccess := RemoveDir(tempDir);
+    isSuccess := RemoveDir(tempDir);
 
-    if IsSuccess then
+    if isSuccess then
       Writeln('Delete ', tempDir, '  -- OK.')
     else
+    begin
       Writeln('Delete ', tempDir, '  -- Failed.');
+      ret := isSuccess;
+    end;
   end;
+
+  Result := ret;
 end;
 
 procedure TClean.Print;
@@ -95,6 +107,47 @@ begin
   for i := 0 to Length(_fileList) - 1 do
   begin
     Writeln(_fileList[i]);
+  end;
+end;
+
+procedure TClean.Run;
+var
+  yes: UString;
+  isSuccess: boolean;
+begin
+  Print;
+  Writeln('Confirm delete? Y/N (Y = yes & N = no)');
+
+  repeat
+    Readln(yes);
+  until (yes = 'Y') or (yes = 'y') or (yes = 'N') or (yes = 'n');
+
+  if (yes = 'Y') or (yes = 'y') then
+  begin
+    isSuccess := ExecuteClean;
+  end;
+
+  if isSuccess then
+  begin
+    //Writeln(UString('所有文档清理完毕...'));
+    Writeln(string('所有文档清理完毕...'));
+  end
+  else
+  begin
+    DrawLine;
+    WriteLn(string('文档未能清理干净,是否查看列表? Y/N(Y = yes & N = no)'));
+    repeat
+      Readln(yes);
+    until (yes = 'Y') or (yes = 'y') or (yes = 'N') or (yes = 'n');
+
+    if (yes = 'Y') or (yes = 'y') then
+    begin
+      _dirList := [];
+      _fileList := [];
+
+      __scanning(GetCurrentDir);
+      Print;
+    end;
   end;
 end;
 
