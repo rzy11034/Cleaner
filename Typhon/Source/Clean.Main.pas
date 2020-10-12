@@ -1,4 +1,4 @@
-unit Clean.Main;
+﻿unit Clean.Main;
 
 {$mode objfpc}{$H+}
 
@@ -125,32 +125,36 @@ begin
   if (yes = 'Y') or (yes = 'y') then
   begin
     isSuccess := ExecuteClean;
-  end;
 
-  if isSuccess then
-  begin
-    Writeln(string('所有文档清理完毕...'));
+    if isSuccess then
+    begin
+      Writeln(string('所有文档清理完毕...'));
+    end
+    else
+    begin
+      DrawLine;
+      WriteLn(string('文档未能清理干净,是否查看列表? Y/N(Y = yes & N = no)'));
+      repeat
+        Readln(yes);
+      until (yes = 'Y') or (yes = 'y') or (yes = 'N') or (yes = 'n');
+
+      if (yes = 'Y') or (yes = 'y') then
+      begin
+        _dirList := [];
+        _fileList := [];
+
+        __scanning(GetCurrentDir);
+        Print;
+
+      {$IFDEF MSWINDOWS}
+        ReadLn;
+      {$ENDIF}
+      end;
+    end;
   end
   else
   begin
-    DrawLine;
-    WriteLn(string('文档未能清理干净,是否查看列表? Y/N(Y = yes & N = no)'));
-    repeat
-      Readln(yes);
-    until (yes = 'Y') or (yes = 'y') or (yes = 'N') or (yes = 'n');
-
-    if (yes = 'Y') or (yes = 'y') then
-    begin
-      _dirList := [];
-      _fileList := [];
-
-      __scanning(GetCurrentDir);
-      Print;
-
-      {$IFDEF MSWINDOWS}
-      ReadLn;
-      {$ENDIF}
-    end;
+    WriteLn(string('未对文档任何改变...'));
   end;
 end;
 
