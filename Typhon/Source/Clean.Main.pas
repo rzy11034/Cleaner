@@ -146,9 +146,6 @@ begin
         __scanning(GetCurrentDir);
         Print;
 
-      {$IFDEF MSWINDOWS}
-        ReadLn;
-      {$ENDIF}
       end;
     end;
   end
@@ -156,6 +153,10 @@ begin
   begin
     WriteLn(string('未对文档任何改变...'));
   end;
+
+  {$IFDEF MSWINDOWS}
+  ReadLn;
+  {$ENDIF}
 end;
 
 procedure TClean.__addAllFlie(dir: UString);
