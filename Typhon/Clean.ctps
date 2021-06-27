@@ -8,6 +8,8 @@
       <Unit0>
         <Filename Value="Clean.ppr"/>
         <IsPartOfProject Value="True"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
         <CursorPos X="13" Y="6"/>
         <UsageCount Value="53"/>
         <Loaded Value="True"/>
@@ -17,8 +19,9 @@
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="139"/>
-        <CursorPos X="41" Y="153"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="154"/>
+        <CursorPos X="21" Y="159"/>
         <UsageCount Value="53"/>
         <Loaded Value="True"/>
       </Unit1>
@@ -26,6 +29,7 @@
         <Filename Value="Source\Clean.Utils.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
         <TopLine Value="4"/>
         <CursorPos X="12" Y="30"/>
         <UsageCount Value="42"/>
@@ -34,6 +38,7 @@
       <Unit3>
         <Filename Value="Source\Clean.KMPAlgorithm.pas"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
         <TopLine Value="58"/>
         <CursorPos Y="8"/>
         <UsageCount Value="31"/>
@@ -42,6 +47,7 @@
         <Filename Value="C:\codetyphon\fpcsrc\rtl\objpas\sysutils\filutilh.inc"/>
         <FRMtype Value="0"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
         <TopLine Value="56"/>
         <CursorPos X="5" Y="73"/>
         <UsageCount Value="8"/>
@@ -50,6 +56,7 @@
         <Filename Value="C:\codetyphon\fpcsrc\rtl\inc\systemh.inc"/>
         <FRMtype Value="0"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
         <TopLine Value="478"/>
         <CursorPos X="3" Y="495"/>
         <UsageCount Value="8"/>
@@ -58,6 +65,7 @@
         <Filename Value="C:\codetyphon\fpcsrc\rtl\objpas\sysutils\sysutilh.inc"/>
         <FRMtype Value="0"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
         <TopLine Value="264"/>
         <CursorPos X="3" Y="281"/>
         <UsageCount Value="8"/>
@@ -67,6 +75,7 @@
         <FRMtype Value="0"/>
         <UnitName Value="System"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
         <TopLine Value="26"/>
         <CursorPos X="2" Y="52"/>
         <UsageCount Value="8"/>
@@ -75,6 +84,7 @@
         <Filename Value="..\..\..\..\..\..\usr\local\codetyphon\fpcsrc\rtl\objpas\sysutils\sysutilh.inc"/>
         <FRMtype Value="0"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
         <TopLine Value="264"/>
         <CursorPos X="3" Y="280"/>
         <UsageCount Value="10"/>
@@ -83,6 +93,7 @@
         <Filename Value="..\..\..\..\..\..\usr\local\codetyphon\fpcsrc\rtl\objpas\sysutils\filutilh.inc"/>
         <FRMtype Value="0"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
         <TopLine Value="191"/>
         <CursorPos X="10" Y="207"/>
         <UsageCount Value="10"/>
@@ -92,6 +103,7 @@
         <FRMtype Value="0"/>
         <UnitName Value="SysUtils"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
         <TopLine Value="169"/>
         <UsageCount Value="10"/>
       </Unit10>
@@ -99,6 +111,7 @@
         <Filename Value="..\..\..\id_rsa.txt"/>
         <FRMtype Value="0"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
         <UsageCount Value="10"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit11>
@@ -106,6 +119,7 @@
         <Filename Value="lib\x86_64-linux\Clean.compiled"/>
         <FRMtype Value="0"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
         <CursorPos X="28" Y="4"/>
         <UsageCount Value="10"/>
         <DefaultSyntaxHighlighter Value="None"/>
