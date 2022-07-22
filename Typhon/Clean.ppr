@@ -1,12 +1,12 @@
 ﻿program Clean;
 
 {$mode objfpc}{$H+}
+{$ModeSwitch unicodestrings}
 
 uses
  {$IFDEF UNIX}
- {$IFDEF UseCThreads}
   cthreads,
- {$ENDIF}
+  cwstring,
  {$ENDIF}
   SysUtils,
   Clean.Utils,

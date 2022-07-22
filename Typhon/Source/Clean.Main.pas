@@ -1,6 +1,7 @@
 ﻿unit Clean.Main;
 
 {$mode objfpc}{$H+}
+{$ModeSwitch unicodestrings}
 
 interface
 
@@ -55,8 +56,8 @@ end;
 function TClean.ExecuteClean: boolean;
 var
   i: integer;
-  tempDir: UString;
-  tempFlie: UString;
+  tempDir: string;
+  tempFlie: string;
   isSuccess, ret: boolean;
 begin
   ret := true;
@@ -112,7 +113,7 @@ end;
 
 procedure TClean.Run;
 var
-  yes: UString;
+  yes: char;
   isSuccess: boolean;
 begin
   Print;
@@ -120,38 +121,37 @@ begin
 
   repeat
     Readln(yes);
-  until (yes = 'Y') or (yes = 'y') or (yes = 'N') or (yes = 'n');
+  until yes in ['Y', 'y', 'N', 'n'];
 
-  if (yes = 'Y') or (yes = 'y') then
+  if yes in ['Y', 'y'] then
   begin
     isSuccess := ExecuteClean;
 
     if isSuccess then
     begin
-      Writeln(string('所有文档清理完毕...'));
+      Writeln('所有文档清理完毕...');
     end
     else
     begin
       DrawLine;
-      WriteLn(string('文档未能清理干净,是否查看列表? Y/N(Y = yes & N = no)'));
+      WriteLn('文档未能清理干净,是否查看列表? Y/N(Y = yes & N = no)');
       repeat
         Readln(yes);
-      until (yes = 'Y') or (yes = 'y') or (yes = 'N') or (yes = 'n');
+      until yes in ['Y', 'y', 'N', 'n'];
 
-      if (yes = 'Y') or (yes = 'y') then
+      if yes in ['Y', 'y'] then
       begin
         _dirList := [];
         _fileList := [];
 
         __scanning(GetCurrentDir);
         Print;
-
       end;
     end;
   end
   else
   begin
-    WriteLn(string('未对文档任何改变...'));
+    WriteLn('未对文档任何改变...');
   end;
 
   {$IFDEF MSWINDOWS}
@@ -162,7 +162,7 @@ end;
 procedure TClean.__addAllFlie(dir: UString);
 var
   errFile: integer;
-  tempFile: UString;
+  tempFile: string;
   searchRec: TSearchRec;
 begin
   errFile := FindFirst(dir + PathDelim + '*', faAnyFile, searchRec);
@@ -173,7 +173,6 @@ begin
     begin
       tempFile := dir + PathDelim + searchRec.Name;
       __append(_fileList, tempFile);
-
     end;
     errFile := FindNext(searchRec);
   end;

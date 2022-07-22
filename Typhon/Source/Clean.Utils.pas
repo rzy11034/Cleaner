@@ -1,6 +1,7 @@
 ﻿unit Clean.Utils;
 
 {$mode objfpc}{$H+}
+{$ModeSwitch unicodestrings}
 
 interface
 

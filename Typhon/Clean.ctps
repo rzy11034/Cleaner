@@ -4,13 +4,13 @@
     <PathDelim Value="\"/>
     <Version Value="12"/>
     <BuildModes Active="Release"/>
-    <Units Count="13">
+    <Units Count="18">
       <Unit0>
         <Filename Value="Clean.ppr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <CursorPos X="13" Y="6"/>
+        <CursorPos X="10" Y="4"/>
         <UsageCount Value="53"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -20,8 +20,8 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="154"/>
-        <CursorPos X="21" Y="159"/>
+        <TopLine Value="168"/>
+        <CursorPos X="3" Y="187"/>
         <UsageCount Value="53"/>
         <Loaded Value="True"/>
       </Unit1>
@@ -30,8 +30,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="4"/>
-        <CursorPos X="12" Y="30"/>
+        <CursorPos X="17" Y="29"/>
         <UsageCount Value="42"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -124,128 +123,75 @@
         <UsageCount Value="10"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit12>
+      <Unit13>
+        <Filename Value="Clean.ctps"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <CursorPos X="78" Y="5"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="XML"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="..\..\Fun-learning-algorithm\FLA.ctps"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <CursorPos X="16" Y="4"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="XML"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="..\..\DeepStar-Lib\Typhon\Package\Source\Utils\DeepStar.Utils.pas"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <UsageCount Value="10"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="..\..\DeepStar-Lib\Typhon\Package\Source\Utils\DeepStar.UString.pas"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <UsageCount Value="10"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="D:\usr\local\codetyphon\fpcsrc\rtl\unix\cwstring.pp"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <UsageCount Value="10"/>
+      </Unit17>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="7" HistoryIndex="6">
       <Position1>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="38" Column="19" TopLine="14"/>
+        <Filename Value="Clean.ppr"/>
+        <Caret Line="25" Column="26"/>
       </Position1>
       <Position2>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="127" Column="29" TopLine="103"/>
+        <Filename Value="Clean.ppr"/>
+        <Caret Line="9" Column="24"/>
       </Position2>
       <Position3>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="116" Column="3" TopLine="99"/>
+        <Filename Value="Clean.ppr"/>
+        <Caret Line="20" Column="9" TopLine="4"/>
       </Position3>
       <Position4>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="60" Column="12" TopLine="37"/>
+        <Filename Value="Clean.ppr"/>
+        <Caret Line="6" Column="68"/>
       </Position4>
       <Position5>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="130" Column="22" TopLine="104"/>
+        <Filename Value="Clean.ppr"/>
+        <Caret Line="12" Column="11"/>
       </Position5>
       <Position6>
         <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="116" Column="3" TopLine="98"/>
+        <Caret Line="277" Column="14" TopLine="244"/>
       </Position6>
       <Position7>
         <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="67" Column="48" TopLine="52"/>
+        <Caret Line="22" Column="15"/>
       </Position7>
-      <Position8>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="113" Column="13" TopLine="112"/>
-      </Position8>
-      <Position9>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="251" Column="55" TopLine="233"/>
-      </Position9>
-      <Position10>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="151" Column="55" TopLine="133"/>
-      </Position10>
-      <Position11>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="180" Column="5" TopLine="162"/>
-      </Position11>
-      <Position12>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="38" Column="15" TopLine="21"/>
-      </Position12>
-      <Position13>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="169" Column="41" TopLine="156"/>
-      </Position13>
-      <Position14>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="38" Column="15" TopLine="21"/>
-      </Position14>
-      <Position15>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="136" Column="55" TopLine="120"/>
-      </Position15>
-      <Position16>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="247" Column="11" TopLine="244"/>
-      </Position16>
-      <Position17>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="14" Column="5"/>
-      </Position17>
-      <Position18>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="15" Column="5"/>
-      </Position18>
-      <Position19>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="144" Column="19" TopLine="120"/>
-      </Position19>
-      <Position20>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="23" Column="15" TopLine="5"/>
-      </Position20>
-      <Position21>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="248" Column="11" TopLine="243"/>
-      </Position21>
-      <Position22>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="19" Column="21"/>
-      </Position22>
-      <Position23>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="157" Column="3" TopLine="151"/>
-      </Position23>
-      <Position24>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="173" Column="11" TopLine="154"/>
-      </Position24>
-      <Position25>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="137" Column="23" TopLine="123"/>
-      </Position25>
-      <Position26>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="202" Column="5" TopLine="189"/>
-      </Position26>
-      <Position27>
-        <Filename Value="Clean.ppr"/>
-        <Caret Line="25" Column="26"/>
-      </Position27>
-      <Position28>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="275" Column="22" TopLine="72"/>
-      </Position28>
-      <Position29>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="149" Column="7"/>
-      </Position29>
-      <Position30>
-        <Filename Value="Source\Clean.Main.pas"/>
-        <Caret Line="187" Column="28" TopLine="187"/>
-      </Position30>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
