@@ -10,8 +10,8 @@ uses
   SysUtils;
 
 type
-  UChar = UnicodeChar;
-  UString = UnicodeString;
+  UChar = unicodechar;
+  UString = unicodestring;
 
   TArray_int = array of integer;
   TArray_str = array of UString;

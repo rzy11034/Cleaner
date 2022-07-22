@@ -17,17 +17,17 @@ type
 
     /// <summary> 对目录下的所有文件进行扫描并加入 __fileList </summary>
     /// <param name="dir">当前目录 </param>
-    procedure __addAllFlie(dir: UString);
+    procedure __addAllFlie(dir: string);
     /// <summary> 将 str 字符串加入到数组末尾 </summary>
-    procedure __append(var arr: Tarray_str; str: UString);
+    procedure __append(var arr: Tarray_str; str: string);
     /// <summary> 对当前目录下所有目录递归扫描 </summary>
-    procedure __scanning(dir: UString);
+    procedure __scanning(dir: string);
     /// <summary> 快速排序 </summary>
     procedure __sort(var arr: Tarray_str); overload;
     /// <summary> 文件后缀名匹配 </summary>
-    function __fileSuffixMatch(Source: UString): boolean;
+    function __fileSuffixMatch(Source: string): boolean;
     /// <summary> 目录名匹配 </summary>
-    function __dirSuffixMatch(Source: UString): boolean;
+    function __dirSuffixMatch(Source: string): boolean;
 
   public
     constructor Create;
@@ -121,7 +121,7 @@ begin
 
   repeat
     Readln(yes);
-  until yes in ['Y', 'y', 'N', 'n'];
+  until yes in ['y', 'Y', 'n', 'N'];
 
   if yes in ['Y', 'y'] then
   begin
@@ -137,7 +137,7 @@ begin
       WriteLn('文档未能清理干净,是否查看列表? Y/N(Y = yes & N = no)');
       repeat
         Readln(yes);
-      until yes in ['Y', 'y', 'N', 'n'];
+      until yes in ['y', 'Y', 'n', 'N'];
 
       if yes in ['Y', 'y'] then
       begin
@@ -159,7 +159,7 @@ begin
   {$ENDIF}
 end;
 
-procedure TClean.__addAllFlie(dir: UString);
+procedure TClean.__addAllFlie(dir: string);
 var
   errFile: integer;
   tempFile: string;
@@ -180,7 +180,7 @@ begin
   FindClose(searchRec);
 end;
 
-procedure TClean.__append(var arr: Tarray_str; str: UString);
+procedure TClean.__append(var arr: Tarray_str; str: string);
 var
   i: integer;
 begin
@@ -189,7 +189,7 @@ begin
   arr[High(arr)] := str;
 end;
 
-function TClean.__dirSuffixMatch(Source: UString): boolean;
+function TClean.__dirSuffixMatch(Source: string): boolean;
 var
   dirName: TArray_str;
   i: integer;
@@ -218,10 +218,10 @@ begin
   Result := false;
 end;
 
-function TClean.__fileSuffixMatch(Source: UString): boolean;
+function TClean.__fileSuffixMatch(Source: string): boolean;
 var
   suffixName: TArray_str;
-  s, tmp: UString;
+  s, tmp: string;
   i, j: integer;
 begin
   suffixName := [
@@ -255,11 +255,11 @@ begin
   Result := false;
 end;
 
-procedure TClean.__scanning(dir: UString);
+procedure TClean.__scanning(dir: string);
 var
   searchRec: TSearchRec;
   errDir: integer;
-  tempDir: UString;
+  tempDir: string;
 begin
   errDir := FindFirst(dir + PathDelim + '*', faAnyFile, searchRec);
 
@@ -294,9 +294,9 @@ begin
 end;
 
 procedure TClean.__sort(var arr: Tarray_str);
-  procedure __swap__(var a, b: UString);
+  procedure __swap__(var a, b: string);
   var
-    tmp: UString;
+    tmp: string;
   begin
     tmp := a;
     a := b;
@@ -306,7 +306,7 @@ procedure TClean.__sort(var arr: Tarray_str);
   function __partition__(var arr: TArray_str; l, r: integer): integer;
   var
     leftPoint, rightPoint: integer;
-    e: UString;
+    e: string;
   begin
     __swap__(arr[l], arr[l + (r - l) div 2]);
     e := arr[l];
