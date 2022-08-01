@@ -16,6 +16,9 @@ type
   TArray_int = array of integer;
   TArray_str = array of UString;
 
+const
+  BEEP = #7;
+
 procedure DrawLine;
 
 implementation

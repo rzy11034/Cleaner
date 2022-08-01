@@ -129,12 +129,12 @@ begin
 
     if isSuccess then
     begin
-      Writeln('所有文档清理完毕...');
+      Writeln('所有文档清理完毕...', BEEP);
     end
     else
     begin
       DrawLine;
-      WriteLn('文档未能清理干净,是否查看列表? Y/N(Y = yes & N = no)');
+      WriteLn('文档未能清理干净,是否查看列表? Y/N(Y = yes & N = no)', BEEP);
       repeat
         Readln(yes);
       until yes in ['y', 'Y', 'n', 'N'];
@@ -151,7 +151,7 @@ begin
   end
   else
   begin
-    WriteLn('未对文档任何改变...');
+    WriteLn('未对文档任何改变...', BEEP);
   end;
 
   {$IFDEF MSWINDOWS}
